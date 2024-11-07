@@ -5,13 +5,13 @@ import { auth } from "@clerk/nextjs/server";
 const Home = async () => {
   const { userId } = await auth();
   if (!userId) {
-    redirect('/login')
+    redirect("/login");
   }
   return (
-    <div className="h-full flex items-center justify-center">
+    <div className="flex h-full items-center justify-center">
       <UserButton showName />
     </div>
-  ) 
-}
+  );
+};
 
 export default Home;
